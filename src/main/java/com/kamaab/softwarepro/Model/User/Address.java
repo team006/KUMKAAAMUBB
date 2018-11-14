@@ -1,10 +1,10 @@
 package com.kamaab.softwarepro.Model.User;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
+@Table(name = "address")
 public class Address {
 
     @Id
@@ -31,7 +31,16 @@ public class Address {
     @NotBlank
     private long postalCode;
 
+    //Add Foreign Key
+    @OneToOne(mappedBy = "address")
+    private User user;
+
     public Address() {
+    }
+
+    public Address(long addressId, User user) {
+        this.addressId = addressId;
+        this.user = user;
     }
 
     public long getAddressId() {
@@ -98,6 +107,14 @@ public class Address {
         this.postalCode = postalCode;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public String toString() {
         return "Address{" +
@@ -109,6 +126,7 @@ public class Address {
                 ", district='" + district + '\'' +
                 ", province='" + province + '\'' +
                 ", postalCode=" + postalCode +
+                ", user=" + user +
                 '}';
     }
 }

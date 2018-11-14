@@ -1,10 +1,10 @@
 package com.kamaab.softwarepro.Model.User;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
+@Table(name = "bank")
 public class Bank {
 
     @Id
@@ -22,7 +22,16 @@ public class Bank {
     @NotBlank
     private String bankAccountName;
 
+    //Add Foreign Key
+    @OneToOne(mappedBy = "bank")
+    private User user;
+
     public Bank() {
+    }
+
+    public Bank(long bankId, User user) {
+        this.bankId = bankId;
+        this.user = user;
     }
 
     public long getBankId() {
@@ -65,6 +74,14 @@ public class Bank {
         this.bankAccountName = bankAccountName;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public String toString() {
         return "Bank{" +
@@ -73,6 +90,7 @@ public class Bank {
                 ", bankAbbreviation='" + bankAbbreviation + '\'' +
                 ", bankAccount=" + bankAccount +
                 ", bankAccountName='" + bankAccountName + '\'' +
+                ", user=" + user +
                 '}';
     }
 }

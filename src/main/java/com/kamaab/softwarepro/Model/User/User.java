@@ -11,6 +11,7 @@ import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 @Entity
+@Table(name = "user")
 public class User implements Serializable {
 
     @Id
@@ -40,8 +41,25 @@ public class User implements Serializable {
     @NotBlank
     private long telno;
 
+    //Add Foreign Key
+    @OneToOne(cascade = CascadeType.ALL,
+              fetch = FetchType.LAZY)
+    @JoinColumn(name = "addressId")
+    private Address address;
+
+    @OneToOne(cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY)
+    @JoinColumn(name = "bankId")
+    private Bank bank;
 
     public User() {
+
+    }
+
+    public User(long userId, Address address, Bank bank) {
+        this.userId = userId;
+        this.address = address;
+        this.bank = bank;
     }
 
     public long getUserId() {
@@ -116,7 +134,21 @@ public class User implements Serializable {
         this.telno = telno;
     }
 
+    public Address getAddress() {
+        return address;
+    }
 
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public Bank getBank() {
+        return bank;
+    }
+
+    public void setBank(Bank bank) {
+        this.bank = bank;
+    }
 
     @Override
     public String toString() {
@@ -130,6 +162,8 @@ public class User implements Serializable {
                 ", sex='" + sex + '\'' +
                 ", email='" + email + '\'' +
                 ", telno=" + telno +
+                ", address=" + address +
+                ", bank=" + bank +
                 '}';
     }
 }
