@@ -1,7 +1,8 @@
-package com.kamaab.softwarepro.Service.User;
+package com.kamaab.softwarepro.Service.Implement;
 
-import com.kamaab.softwarepro.Model.User.User;
-import com.kamaab.softwarepro.Repository.User.UserRepository;
+import com.kamaab.softwarepro.Model.User;
+import com.kamaab.softwarepro.Repository.UserRepository;
+import com.kamaab.softwarepro.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;

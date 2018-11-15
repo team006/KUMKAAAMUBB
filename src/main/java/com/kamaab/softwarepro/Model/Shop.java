@@ -1,4 +1,4 @@
-package com.kamaab.softwarepro.Model.Shop;
+package com.kamaab.softwarepro.Model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

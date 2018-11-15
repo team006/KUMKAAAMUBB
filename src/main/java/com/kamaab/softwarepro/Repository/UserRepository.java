@@ -1,6 +1,6 @@
-package com.kamaab.softwarepro.Repository.User;
+package com.kamaab.softwarepro.Repository;
 
-import com.kamaab.softwarepro.Model.User.User;
+import com.kamaab.softwarepro.Model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

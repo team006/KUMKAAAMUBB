@@ -1,7 +1,7 @@
-package com.kamaab.softwarepro.Controller.Shop;
+package com.kamaab.softwarepro.Controller;
 
-import com.kamaab.softwarepro.Model.Shop.Shop;
-import com.kamaab.softwarepro.Service.Shop.ShopService;
+import com.kamaab.softwarepro.Model.Shop;
+import com.kamaab.softwarepro.Service.ShopService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

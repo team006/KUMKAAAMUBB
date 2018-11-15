@@ -1,7 +1,8 @@
-package com.kamaab.softwarepro.Service.Product;
+package com.kamaab.softwarepro.Service;
 
 import java.util.List;
-import com.kamaab.softwarepro.Model.Product.*;
+
+import com.kamaab.softwarepro.Model.Product;
 import org.springframework.stereotype.Service;
 
 @Service

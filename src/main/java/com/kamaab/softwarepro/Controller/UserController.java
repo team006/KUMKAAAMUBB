@@ -1,7 +1,7 @@
-package com.kamaab.softwarepro.Controller.User;
+package com.kamaab.softwarepro.Controller;
 
-import com.kamaab.softwarepro.Model.User.User;
-import com.kamaab.softwarepro.Service.User.UserService;
+import com.kamaab.softwarepro.Model.User;
+import com.kamaab.softwarepro.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

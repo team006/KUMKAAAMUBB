@@ -1,10 +1,9 @@
-package com.kamaab.softwarepro.Model.Product;
+package com.kamaab.softwarepro.Model;
 
 
-import com.kamaab.softwarepro.Model.Shop.*;
+import com.kamaab.softwarepro.Model.Shop;
 
 import javax.persistence.*;
-import java.util.*;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 

@@ -1,6 +1,6 @@
-package com.kamaab.softwarepro.Controller.Product;
+package com.kamaab.softwarepro.Controller;
 
-import com.kamaab.softwarepro.Service.Product.ProductService;
+import com.kamaab.softwarepro.Service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,8 +11,4 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @GetMapping("/")
-    public String Test(){
-        return "Home";
-    }
 }

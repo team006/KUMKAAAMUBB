@@ -1,6 +1,6 @@
-package com.kamaab.softwarepro.Repository.Product;
+package com.kamaab.softwarepro.Repository;
 
-import com.kamaab.softwarepro.Model.Product.Product;
+import com.kamaab.softwarepro.Model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

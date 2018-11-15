@@ -1,7 +1,8 @@
-package com.kamaab.softwarepro.Service.Shop;
+package com.kamaab.softwarepro.Service.Implement;
 
-import com.kamaab.softwarepro.Model.Shop.Shop;
-import com.kamaab.softwarepro.Repository.Shop.ShopRepository;
+import com.kamaab.softwarepro.Model.Shop;
+import com.kamaab.softwarepro.Repository.ShopRepository;
+import com.kamaab.softwarepro.Service.ShopService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
