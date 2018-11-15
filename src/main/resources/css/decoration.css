@@ -1,0 +1,30 @@
+<style>
+            html,body{
+                background-color:#ffcc00;
+            }
+            .header{
+                background-color:#ffcc00;
+            }
+            footer{
+                background-color:#000000;
+            }
+            .button{
+            background-color: #555;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            opacity: 0.8;
+            width: 150px;
+            height: 70px;
+            }
+            body{
+                width: auto;
+            }
+            .fb {
+              background-color: #3B5998;
+              color: white;
+            }
+            p{
+                color: 
+            }
+</style>
