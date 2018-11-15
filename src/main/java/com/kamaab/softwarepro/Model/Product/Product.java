@@ -11,33 +11,38 @@ import java.io.Serializable;
 @Entity
 @Table(name = "product")
 public class Product  implements Serializable {
+
     @Id
     private long productId ;
+
     @NotBlank
     private String productName;
-    @NotBlank
+
     private double productPrice;
 
     private double productTax;
 
     private String description;
+
     @NotBlank
     private String productBrand;
-    @NotBlank
+
     private int productAmount;
 
     private String productColor;
 
     private String productSize;
+
     @NotBlank
     private String productImg;
+
     @NotBlank
     private String productType;
 
     @OneToOne(cascade = CascadeType.ALL,
             fetch = FetchType.LAZY)
-    @JoinColumn(name = "shopID")
-    private Shop shopID;
+    @JoinColumn(name = "shopId")
+    private Shop shop;
 
     public Product(){
 
@@ -134,12 +139,12 @@ public class Product  implements Serializable {
         this.productType = productType;
     }
 
-    public Shop getShopID() {
-        return shopID;
+    public Shop getShop() {
+        return shop;
     }
 
-    public void setShopID(Shop shopID) {
-        this.shopID = shopID;
+    public void setShop(Shop shop) {
+        this.shop = shop;
     }
 
     @Override
@@ -156,7 +161,7 @@ public class Product  implements Serializable {
                 ", productSize='" + productSize + '\'' +
                 ", productImg='" + productImg + '\'' +
                 ", productType='" + productType + '\'' +
-                ", shopID=" + shopID +
+                ", shopId=" + shop +
                 '}';
     }
 }

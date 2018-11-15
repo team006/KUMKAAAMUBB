@@ -38,7 +38,6 @@ public class User implements Serializable {
     @NotBlank
     private String email;
 
-    @NotBlank
     private long telno;
 
     //Add Foreign Key

@@ -16,7 +16,6 @@ public class Shipping implements Serializable {
     @NotBlank
     private String shippingType;
 
-    @NotBlank
     private double shippingCost;
 
     @NotBlank

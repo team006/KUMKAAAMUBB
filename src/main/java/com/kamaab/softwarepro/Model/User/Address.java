@@ -10,7 +10,6 @@ public class Address {
     @Id
     private long addressId;
 
-    @NotBlank
     private long number;
 
     @NotBlank
@@ -28,7 +27,6 @@ public class Address {
     @NotBlank
     private String province;
 
-    @NotBlank
     private long postalCode;
 
     //Add Foreign Key

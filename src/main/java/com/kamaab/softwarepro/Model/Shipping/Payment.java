@@ -18,10 +18,8 @@ public class Payment {
     @NotBlank
     private Date paymentDate;
 
-    @NotBlank
     private long paymentRef1;
 
-    @NotBlank
     private long paymentRef2;
 
     @NotBlank

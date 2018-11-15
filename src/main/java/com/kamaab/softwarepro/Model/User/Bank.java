@@ -16,7 +16,6 @@ public class Bank {
     @NotBlank
     private String bankAbbreviation;
 
-    @NotBlank
     private long bankAccount;
 
     @NotBlank
