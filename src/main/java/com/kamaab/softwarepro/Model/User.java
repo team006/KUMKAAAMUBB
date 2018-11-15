@@ -1,27 +1,25 @@
 package com.kamaab.softwarepro.Model;
 
-
-import org.aspectj.weaver.ast.Not;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.security.core.userdetails.UserDetails;
-
-import javax.persistence.*;
-import java.util.*;
-import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
-@Entity
-@Table(name = "user")
-public class User implements Serializable {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
+@Entity
+@Table(name = "user_profiles")
+public class User implements Serializable {
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long userId;
 
-    @NotBlank
-    private String username;
+    private String facebookId;
 
     @NotBlank
-    private String password;
+    private String telNo;
 
     @NotBlank
     private String name;
@@ -29,19 +27,9 @@ public class User implements Serializable {
     @NotBlank
     private String surname;
 
-    @NotBlank
-    private Date birthdate;
-
-    @NotBlank
     private String sex;
 
-    @NotBlank
-    private String email;
-
-    private long telno;
-
     public User() {
-
     }
 
     public long getUserId() {
@@ -52,20 +40,20 @@ public class User implements Serializable {
         this.userId = userId;
     }
 
-    public String getUsername() {
-        return username;
+    public String getFacebookId() {
+        return facebookId;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setFacebookId(String facebookId) {
+        this.facebookId = facebookId;
     }
 
-    public String getPassword() {
-        return password;
+    public String getTelNo() {
+        return telNo;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setTelNo(String telNo) {
+        this.telNo = telNo;
     }
 
     public String getName() {
@@ -84,14 +72,6 @@ public class User implements Serializable {
         this.surname = surname;
     }
 
-    public Date getBirthdate() {
-        return birthdate;
-    }
-
-    public void setBirthdate(Date birthdate) {
-        this.birthdate = birthdate;
-    }
-
     public String getSex() {
         return sex;
     }
@@ -100,34 +80,4 @@ public class User implements Serializable {
         this.sex = sex;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public long getTelno() {
-        return telno;
-    }
-
-    public void setTelno(long telno) {
-        this.telno = telno;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", birthdate=" + birthdate +
-                ", sex='" + sex + '\'' +
-                ", email='" + email + '\'' +
-                ", telno=" + telno +
-                '}';
-    }
 }
