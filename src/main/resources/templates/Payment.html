@@ -28,9 +28,6 @@ and open the template in the editor.
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -45,30 +42,101 @@ and open the template in the editor.
                           <a class="navbar-brand" href="#"><font color="#ffcc00">KUM KAA-MUBB</font></a>
                         </div>
                         <ul class="nav navbar-nav">
-                          <li class="active"><a href="home.html"><font color="white">
+                          <li class="active"><a href="Index.html"><font color="white">
                             <span class="glyphicon glyphicon-home" color="white"></span>&nbsp; HOME</font></a></li>
-                          <li><a href="#"><font color="white">
-                            <span class="glyphicon glyphicon-shopping-cart" color="white"></span>&nbsp; CART</font></a></li>
-                          <li><a href="#"><font color="white">
-                            <span class="glyphicon glyphicon-bell" color="white"></span>&nbsp; NOTIFICATION</font></a></li>
-                          <li><a href="#"><font color="white">
-                            <span class="glyphicon glyphicon-search" color="white"></span>&nbsp; Search product :</font></a></li>
+                          
                         </ul>
-                        <form class="navbar-form navbar-left" action="/action_page.php">
-                          <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                          </div>
-                          <button type="submit" class="btn btn-default">Search</button>
-                        </form>
-                            
+                        
                         <ul class="nav navbar-nav navbar-right">
-                          <li><a href="#"><span class="glyphicon glyphicon-user"></span> #SHOW_ProfilePicture_And_USER_NAME </a></li>
+                          <li><a href="signin.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                         </ul>
                         </div>
 
                 </nav>
             </div>
         <style>
+        
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+.button{
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  opacity: 0.8;
+  width: 150px;
+  height: 70px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=number] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=number]:focus, .form-container input[type=number]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
             html,body{
                 background-color:#ffcc00;
             }
@@ -78,12 +146,18 @@ and open the template in the editor.
             footer{
                 background-color:#000000;
             }
+            body{
+                width: auto;
+            }
+            .fb {
+              background-color: #3B5998;
+              color: white;
+            }
         </style>
-</head>
 
+    </head>
 <body>
-        <br><br>
-
+ <br><br>
         <div class="Title">
         <div class="row">
         <div class="col-sm-1"></div>
@@ -103,7 +177,7 @@ and open the template in the editor.
         <div class="col-sm-1" style="background-color:white;"><br><h4>price</h4><br></div>
         <div class="col-sm-1"></div>
         </div>
-        </div>>
+        </div>
 
         <br>
 
@@ -122,7 +196,7 @@ and open the template in the editor.
 
         <div class="row">
         <div class="col-sm-1"></div>
-        <div class="col-sm-6" style="background-color:white;"><img src="../img/rolex.jpg" width="100" height="100"> #Productname</img></div>
+        <div class="col-sm-6" style="background-color:white;"><img src="#prodctImage" width="100" height="100"> #Productname</img></div>
         <div class="col-sm-2" style="background-color:white;"><br><br>#Productprice<br><br><br></div>
         <div class="col-sm-1" style="background-color:white;"><br><br>#Amount  <br><br><br></div>
         <div class="col-sm-1" style="background-color:white;"><br><br> #Amount*Productprice <br><br><br></div>
@@ -131,30 +205,65 @@ and open the template in the editor.
 
         <br><br>
 
+        <div class="SumPrice">
         <div class="row">
         <div class="col-sm-1"></div>
         <div class="col-sm-6" style="background-color:white;"><br><br><br><br><br></div>
         <div class="col-sm-2" style="background-color:white;"><br><br><br><br><br></div>
         <div class="col-sm-1" style="background-color:white;"><br><br> Total  <br><br><br></div>
-        <div class="col-sm-1" style="background-color:white;"><br><br> 6,876,000 THB <br><br><br></div>
+        <div class="col-sm-1" style="background-color:white;"><br><br> SumProductPrice <br><br><br></div>
         <div class="col-sm-1"></div>
         </div>
 
-        <br><br>
-
-        <div class="Confirm">
+        <br><br>.
+        
+        <div class="Credit">
         <div class="row">
-        <div class="col-sm-8"></div>
-        <div class="col-sm-2"></div><button type="submit">Order</button>
-        <div class="col-sm-2s"></div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10" style="background-color:white;"><h4>Credit / Debit Card </h4> <br><br>
+            
+            <div class="col-sm-5">
+            <p font-size="4">Card holder name</p>
+            <input type="text" placeholder="Enter Card holder name" name="name" required>
+
+            <br><br>
+
+            <p font-size="4">Card number</p>
+            <input type="number" placeholder="Enter Card number" name="no" required>
+
+            <br><br>
+
+            <p font-size="4">Invalid date</p>
+            <input type="number" placeholder="MM" name="MM" required> &nbsp; &nbsp;
+            <input type="number" placeholder="YYYY" name="YYYY" required>
+
+            <br><br>
+
+            <p font-size="4">CVV</p>
+            <input type="number" placeholder="Enter CVV" name="CVV" required>
+
+            <br><br>
+            </div>
+
+
+        
+        
+            <div class="col-sm-5">
+            <div class="Confirm">
+            <div class="row">
+            <div class="col-sm-8"></div>
+            <div class="col-sm-2"><br><br><br><br><p align="center"><button type="submit" class="button">Pay</button></p></div>
+            <div class="col-sm-2s"></div>
+            </div>
+            </div>
+            </div>
+
+        </div>
+        <div class="col-sm-1"></div>
         </div>
         </div>
-
-
-</div>
-
 </body>
-<footer class="footer">
+ <footer class="footer">
         <br>
         
         <div class="container">
