@@ -26,14 +26,7 @@ public class SoftwareProApplication extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .antMatcher("/**")
-                .authorizeRequests()
-                .antMatchers("/", "/login**", "/webjars/**", "/error**")
-                .permitAll()
-                .anyRequest()
-                .authenticated()
-                .and().logout().logoutSuccessUrl("/").permitAll()
-                .and().csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());;
+        http.csrf().disable().antMatcher("/**").authorizeRequests().antMatchers("/","/login**").permitAll()
+                .anyRequest().authenticated().and().logout().logoutSuccessUrl("/").permitAll();
     }
 }
