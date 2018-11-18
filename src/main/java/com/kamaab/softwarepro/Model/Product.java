@@ -11,8 +11,6 @@ import javax.validation.constraints.NotBlank;
 
 
 @Entity
-@Table(name="products")
-
 public class Product implements Serializable{
 
     @Id

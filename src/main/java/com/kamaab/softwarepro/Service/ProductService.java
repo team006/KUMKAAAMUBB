@@ -14,20 +14,27 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository​​​​​​;
 
-    public List<Product> getAllUser() {
-        return productRepository​​​​​​.findAll();
-    }
 
-    public Optional<Product> getUserById(long id) {
-        return productRepository​​​​​​.findById(id);
-    }
+
+
 
     public Product save(Product product) {
         return productRepository​​​​​​.save(product);
     }
 
-    public long delete(long id) {
-        productRepository​​​​​​.deleteById(id);
-        return id;
+    public long deleteByProductId(long productId) {
+        productRepository​​​​​​.deleteById(productId);
+        return productId;
     }
+
+
+    public List<Product> getProductByProductId(long productId){
+        return productRepository​​​​​​.findProductByProductId(productId);
+
+    }
+
+
+
+
+
 }
