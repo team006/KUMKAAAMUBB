@@ -47,7 +47,7 @@ and open the template in the editor.
                         <ul class="nav navbar-nav">
                           <li class="active"><a href="home.html"><font color="white">
                             <span class="glyphicon glyphicon-home" color="white"></span>&nbsp; HOME</font></a></li>
-                          <li><a href="cart.html"><font color="white">
+                          <li><a href="YourCart.html"><font color="white">
                             <span class="glyphicon glyphicon-shopping-cart" color="white"></span>&nbsp; CART</font></a></li>
                           <li><a href="#"><font color="white">
                             <span class="glyphicon glyphicon-bell" color="white"></span>&nbsp; NOTIFICATION</font></a></li>
@@ -62,8 +62,8 @@ and open the template in the editor.
                         </form>
                             
                         <ul class="nav navbar-nav navbar-right">
-                          <li><a href="#"><span class="glyphicon glyphicon-user"></span> #SHOW_ProfilePicture_And_USER_NAME </a></li>
-                          <li><a href="register.html"><span class="glyphicon glyphicon-log-in"></span> LOGOUT</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> #SHOW_USER_NAME </a></li>
+                            <li><a href="signin.html"><span class="glyphicon glyphicon-log-in"></span> LOGOUT</a></li>
                         </ul>
                         </div>
 
@@ -72,86 +72,116 @@ and open the template in the editor.
        <link rel="stylesheet" type="text/css" href="decoraion.css"/>
 </head>
 
-<body>
+    <body>
         <div class="container">
             <div class="page-header">
                 <article>
                     <h1>
-                        <font size="500" color="black"><b><u>YOUR CART</u></b> </font>
+                        <font size="500" color="black"><b><u>YOUR ORDER : </u></b> </font>
                     </h1>
                 </article>
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>PRODUCT NAME :</th>
+                        <th>PRICE/PIECE</th>
+                        <th>AMOUNT</th>
+                        <th>PRICE</th>
 
-        <div class="Information">
-        <div class="row">
-        <div class="col-sm-1"></div>
-            <div class="col-sm-6" style="background-color:orange;"><br><h4>PRODUCT NAME</h4><br></div>
-            <div class="col-sm-2" style="background-color:orange;"><br><h4>PRICE/PIECE</h4><br></div>
-            <div class="col-sm-1" style="background-color:orange;"><br><h4>AMOUNT</h4><br></div>
-            <div class="col-sm-1" style="background-color:orange;"><br><h4>PRICE</h4><br></div>
-            <div class="col-sm-1">
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Cloth</td>
+                        <td>100</td>
+                        <td>1</td>
+                        <td>100</td>
+                      </tr>
+                      <tr>
+                        <td>bag</td>
+                        <td>200</td>
+                        <td>2</td>
+                        <td>400</td>
+                      </tr>
+                      <tr>
+                        <td>Shoes</td>
+                        <td>300</td>
+                        <td>2</td>
+                        <td>600</td>
+                      </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>TOTAL PRICE : </td>
+                            <td>1100</td>
+                        </tr>
+
+                    </tbody>
+                  </table>
+                  <p align="right">
+                  <div class="container" align="right">
                 
+                        <button type="button" class="btn btn-primary btn-lg">BUY</button>
+                    
+                </div>
+            </p>
             </div>
         </div>
         </div>
-
-        <br>
-
-        <div class="ShowProduct">
+        <div class="Credit">
         <div class="row">
         <div class="col-sm-1"></div>
-        <div class="col-sm-6" style="background-color:white;"><img src="../img/rolex.jpg" width="100" height="100"> Rolex Datejust</img></div>
-        <div class="col-sm-2" style="background-color:white;"><br><br>335,800 THB<br><br><br></div>
-        <div class="col-sm-1" style="background-color:white;"><br><br> 10  <br><br><br></div>
-        <div class="col-sm-1" style="background-color:white;"><br><br> 3,358,000 THB <br><br><br></div>
-        <div class="col-sm-1"></div>
-        </div>
-        </div>
+        <div class="col-sm-10" style="background-color:pink;"><h4>Credit / Debit Card </h4> <br><br>
+            
+            <div class="col-sm-5">
+            <p font-size="4">Card holder name</p>
+            <input type="text" placeholder="Enter Card holder name" name="name" required>
 
-        <br>
+            <br><br>
 
-        <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-6" style="background-color:white;"><img src="../img/rolex.jpg" width="100" height="100"> #Productname</img></div>
-        <div class="col-sm-2" style="background-color:white;"><br><br>#Productprice<br><br><br></div>
-        <div class="col-sm-1" style="background-color:white;"><br><br>#Amount  <br><br><br></div>
-        <div class="col-sm-1" style="background-color:white;"><br><br> #Amount*Productprice <br><br><br></div>
-        <div class="col-sm-1"></div>
-        </div>
+            <p font-size="4">Card number</p>
+            <input type="number" placeholder="Enter Card number" name="no" required>
 
-        <br><br>
+            <br><br>
 
-        <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-6" style="background-color:white;"><br><br><br><br><br></div>
-        <div class="col-sm-2" style="background-color:white;"><br><br><br><br><br></div>
-        <div class="col-sm-1" style="background-color:white;"><br><br> Total  <br><br><br></div>
-        <div class="col-sm-1" style="background-color:white;"><br><br> 6,876,000 THB <br><br><br></div>
-        <div class="col-sm-1"></div>
-        </div>
+            <p font-size="4">Invalid date</p>
+            <input type="number" placeholder="MM" name="MM" required> &nbsp; &nbsp;
+            <input type="number" placeholder="YYYY" name="YYYY" required>
 
-        <br><br>
+            <br><br>
 
-        <div class="Confirm">
-        <div class="row">
-        <div class="col-sm-8"></div>
-        <div class="col-sm-2"></div><button type="submit">Order</button>
-        <div class="col-sm-2s"></div>
-        </div>
-        </div>
+            <p font-size="4">CVV</p>
+            <input type="number" placeholder="Enter CVV" name="CVV" required>
+
+            <br><br>
+            </div>
 
 
-</div>
-
-</body>
-<footer class="footer">
-        <br>
         
-        <div class="container">
-                <p class="text-muted" align="right"><font color="white">© 2018 'KUM KAA-MUBB' Group. All Rights Reserved</font></p>
-                </div>
+        
+            <div class="col-sm-5">
+            <div class="Confirm">
+            <div class="row">
+            <div class="col-sm-8"></div>
+            <div class="col-sm-2"><br><br><br><br><p align="center"><button id="button" type="submit" class="button">Pay</button></p></div>
+            <div class="col-sm-2s"></div>
+            </div>
+            </div>
+            </div>
 
-              </div>
+        </div>
+    </div>
+</div>
+</body>
+        <footer>
+        <nav class="navbar navbar-inverse">
+              <div class="container-fluid">
+                    <div class="container"><br>
+                        <p class="text-muted" align="right"><font color="white">© 2018 'KUM KAA-MUBB' Group. All Rights Reserved</font></p>
+                    </div>
+                </div>
             </nav>
-        </footer>
-        <script src="js/bootstrap.min.js"></script>
+    </footer>
 </html>

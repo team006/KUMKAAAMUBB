@@ -47,7 +47,7 @@ and open the template in the editor.
                         <ul class="nav navbar-nav">
                           <li class="active"><a href="home.html"><font color="white">
                             <span class="glyphicon glyphicon-home" color="white"></span>&nbsp; HOME</font></a></li>
-                          <li><a href="cart.html"><font color="white">
+                          <li><a href="YourCart.html"><font color="white">
                             <span class="glyphicon glyphicon-shopping-cart" color="white"></span>&nbsp; CART</font></a></li>
                           <li><a href="#"><font color="white">
                             <span class="glyphicon glyphicon-bell" color="white"></span>&nbsp; NOTIFICATION</font></a></li>
@@ -62,7 +62,9 @@ and open the template in the editor.
                         </form>
                             
                         <ul class="nav navbar-nav navbar-right">
-                          <li><a href="#"><span class="glyphicon glyphicon-user"></span> #SHOW_ProfilePicture_And_USER_NAME </a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> #SHOW_USER_NAME </a></li>
+                            <li><a href="signin.html"><span class="glyphicon glyphicon-log-in"></span> LOGOUT</a></li>
+
                         </ul>
                         </div>
 
@@ -82,27 +84,37 @@ and open the template in the editor.
                 <table class="table table-hover">
                     <thead>
                       <tr>
-                        <th>PRODUCT NAME :</th>
-                        <th>PRICE/PIECE</th>
-                        <th>AMOUNT</th>
-                        <th>PRICE</th>
+                            <th></th>
+                            <th>PRODUCT NAME :</th>
+                            <th>PRICE/PIECE</th>
+                            <th>AMOUNT</th>
+                            <th>PRICE</th>
 
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
+                        <td>
+                            <label><input type="checkbox" value=""></label>
+                        </td>
                         <td>Cloth</td>
                         <td>100</td>
                         <td>1</td>
                         <td>100</td>
                       </tr>
                       <tr>
+                          <td>
+                              <label><input type="checkbox" value=""></label>
+                          </td>
                         <td>bag</td>
                         <td>200</td>
                         <td>2</td>
                         <td>400</td>
                       </tr>
                       <tr>
+                          <td>
+                              <label><input type="checkbox" value=""></label>
+                          </td>
                         <td>Shoes</td>
                         <td>300</td>
                         <td>2</td>
@@ -118,11 +130,12 @@ and open the template in the editor.
                         </tr>
 
                     </tbody>
+
                   </table>
                   <p align="right">
                   <div class="container" align="right">
                 
-                        <button type="button" class="btn btn-primary btn-lg">BUY</button>
+                        <a href="Order.html"> <button type="button" class="btn btn-primary btn-lg">BUY</button></a>
                     
                 </div>
             </p>

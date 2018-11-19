@@ -57,34 +57,15 @@ and open the template in the editor.
                           </div>
                           <button type="submit" class="btn btn-default">Search</button>
                         </form>
-                            
                         <ul class="nav navbar-nav navbar-right">
-                          <li><a href="#"><span class="glyphicon glyphicon-user"></span> #SHOW_ProfilePicture_And_USER_NAME </a></li>
-                          <li><a href="register.html"><span class="glyphicon glyphicon-log-in"></span> LOGOUT</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> #SHOW_USER_NAME </a></li>
+                            <li><a href="signin.html"><span class="glyphicon glyphicon-log-in"></span> LOGOUT</a></li>
                         </ul>
                         </div>
 
                 </nav>
             </div>
-        <style>
-            html,body{
-                background-color:#ffcc00;
-                height: 100%; 
-                display: block;
-                margin: 0;
-                padding: 0;
-            }
-            .header{
-                background-color:#ffcc00;
-            }
-
-            footer{
-                background-color:#000000;
-                height: 20px; /* ความสูงของ footer */
-                display: block;
-                text-align: center;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="decoraion.css"/>
 </head>
 
 <body>
@@ -106,26 +87,26 @@ and open the template in the editor.
                       <input type="number" class="form-control" id="usr">
                     </div>
                     <div class="form-group">
-                      <label for="dst">DISTRICT</label>
+                      <label for="DISTRICT">DISTRICT</label>
                       <input type="text" class="form-control" id="DISTRICT">
                     </div>
                     <div class="form-group">
-                      <label for="pv">PROVINCE</label>
+                      <label for="PROVINCE">PROVINCE</label>
                       <input type="text" class="form-control" id="PROVINCE">
                     </div>
                     
                 </div>
                 <div class="col-sm-6">
                   <div class="form-group">
-                      <label for="vl">VILLAGE</label>
+                      <label for="VILLAGE">VILLAGE</label>
                       <input type="text" class="form-control" id="VILLAGE">
                     </div>
                     <div class="form-group">
-                      <label for="sdst">SUB-DISTRICT</label>
+                      <label for="SUB-DISTRICT">SUB-DISTRICT</label>
                       <input type="text" class="form-control" id="SUB-DISTRICT">
                     </div>
                     <div class="form-group">
-                      <label for="ptc">POSTAL CODE</label>
+                      <label for="POSTAL">POSTAL CODE</label>
                       <input type="number" class="form-control" id="POSTAL">
                     </div>
                 </div>
@@ -141,7 +122,7 @@ and open the template in the editor.
                     <button type="button" class="btn btn-danger btn-block">RESET</button>
                  </div>
           </div></center>
-      </div><br><br><br><br><br><br>
+      </div><br><br>
 </body>
         <footer class="footer">
             <nav class="navbar navbar-inverse">
