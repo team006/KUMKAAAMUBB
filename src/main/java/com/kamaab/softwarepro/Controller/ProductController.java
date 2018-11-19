@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 
 @RestController
 class ProductController {
@@ -38,9 +40,10 @@ class ProductController {
 
     }
     @GetMapping("/product")
-    public ResponseEntity<Product> getAllProduct(){
-        return new ResponseEntity(productService.getAllProduct(),HttpStatus.OK);
-
+    public String getAllProduct(ModelMap model){
+        List<Product> allProducts = productService.getAllProduct();
+        model.addAttribute("allProducts",allProducts);
+        return "product";
     }
 
 
