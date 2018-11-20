@@ -2,28 +2,19 @@ package com.kamaab.softwarepro.Model;
 
 import java.io.Serializable;
 
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 public class Order  implements Serializable{
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long orderId;
 
     @NotBlank
-    private double totalPrice;
+    private long totalPrice;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_id", nullable = false)
@@ -31,8 +22,11 @@ public class Order  implements Serializable{
     private User userId;
 
     @NotBlank
-    private String shippingAddress;
+    private String omiseToken;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.MERGE)
+    @JoinColumn(name = "destination_location_id", nullable = false)
+    private Address destination;
     public long getOrderId() {
         return orderId;
     }
@@ -41,11 +35,11 @@ public class Order  implements Serializable{
         this.orderId = orderId;
     }
 
-    public double getTotalPrice() {
+    public long getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(double totalPrice) {
+    public void setTotalPrice(long totalPrice) {
         this.totalPrice = totalPrice;
     }
 
@@ -57,11 +51,27 @@ public class Order  implements Serializable{
         this.userId = user;
     }
 
-    public String getShippingAddress() {
-        return shippingAddress;
+    public Address getDestination() {
+        return destination;
     }
 
-    public void setShippingAddress(String shippingAddress) {
-        this.shippingAddress = shippingAddress;
+    public void setDestination(Address destination) {
+        this.destination = destination;
+    }
+
+    public User getUserId() {
+        return userId;
+    }
+
+    public void setUserId(User userId) {
+        this.userId = userId;
+    }
+
+    public String getOmiseToken() {
+        return omiseToken;
+    }
+
+    public void setOmiseToken(String omiseToken) {
+        this.omiseToken = omiseToken;
     }
 }

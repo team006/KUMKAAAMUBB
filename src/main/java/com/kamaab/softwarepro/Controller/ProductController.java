@@ -38,11 +38,11 @@ class ProductController {
         return new ResponseEntity(productService.getProductByProductId(productId),HttpStatus.OK);
 
     }
-    @GetMapping("/product")
+    @GetMapping("/")
     public String getAllProduct(ModelMap model){
         List<Product> allProducts = productService.getAllProduct();
         model.addAttribute("allProducts",allProducts);
-        return "product";
+        return "index";
     }
 
 
