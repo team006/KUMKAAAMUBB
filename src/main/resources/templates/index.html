@@ -151,13 +151,14 @@
                                     <h4 class="card-title">
                                         <p id="productname" th:text="${product.productName}">productname</p>
                                     </h4>
-                                    <a class="name" th:href="${'/viewProductDetail/'+product.productId}" id="product-name-link">
                                     <div class="row">
                                         <div class="col">
                                             <p class="btn btn-danger btn-block" th:text="${product.productPrice}" style="font-size:20px"></p>
                                         </div>
                                         <div class="col">
-                                            <a href="#" class="btn btn-success btn-block" style="font-size:20px">Detail</a>
+                                            <a href="#" th:href="${'/viewProductDetail/'+product.productId}" id="product-n
+                                         ame-link" class="btn btn-success btn-block" style="font-size:20px">Detail
+                                            </a>
                                         </div>
                                     </div>
                                     </a>
