@@ -67,38 +67,19 @@
                 </button>
 
                 <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
-                    <ul class="navbar-nav m-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="YourCart.html">Cart</a>
-                        </li>
-
-                    </ul>
-
+                    <ul class="right"></ul>
                     <form class="form-inline my-2 my-lg-0">
-                        <div class="input-group input-group-sm">
-                            <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Search...">
-                            <div class="input-group-append">
-                                <button type="button" class="btn btn-secondary btn-number">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
                         <a class="btn btn-success btn-sm ml-3" href="cart.html">
                             <i class="fa fa-shopping-cart"></i> Cart
                             <span class="badge badge-light">3</span>
                         </a>
                     </form>
-                    <ul class="navbar-nav m-auto">
                         <li class="nav-item">
-                            <font color="#f0ffff" ><span id="user" style="color: white"> </span></font>
+                            <span id="user" style="color: white"></span>
                         </li> &nbsp;&nbsp;
                         <li>
                             <button onClick="logout()" class="btn">Logout</button>
                         </li>
-                    </ul>
                 </div>
             </div>
         </nav>
@@ -108,17 +89,6 @@
                 <p class="lead text-muted mb-0">Easy for shopping</p>
             </div>
         </section>
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-        </div>
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-3">
@@ -157,7 +127,7 @@
                                         </div>
                                         <div class="col">
                                             <a href="#" th:href="${'/viewProductDetail/'+product.productId}" id="product-n
-                                         ame-link" class="btn btn-success btn-block" style="font-size:20px">Detail
+                                         ame-link" class="btn btn-success btn-block" style="font-size:20px">Product detail
                                             </a>
                                         </div>
                                     </div>
