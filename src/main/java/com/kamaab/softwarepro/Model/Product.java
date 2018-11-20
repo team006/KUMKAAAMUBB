@@ -19,14 +19,17 @@ public class Product implements Serializable{
 
     @NotBlank
     private String productName;
+
     @NotBlank
     private double productPrice;
 
     private int productAmount;
 
     private String productSize;
+
     @NotBlank
     private String productImg;
+
     @NotBlank
     private String productType;
 

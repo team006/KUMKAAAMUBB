@@ -27,6 +27,7 @@ public class Order  implements Serializable{
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.MERGE)
     @JoinColumn(name = "destination_location_id", nullable = false)
     private Address destination;
+
     public long getOrderId() {
         return orderId;
     }

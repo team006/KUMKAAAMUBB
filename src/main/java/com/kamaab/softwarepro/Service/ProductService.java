@@ -15,10 +15,6 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository​​​​​​;
 
-
-
-
-
     public Product save(Product product) {
         return productRepository​​​​​​.save(product);
     }
@@ -27,7 +23,6 @@ public class ProductService {
         productRepository​​​​​​.deleteById(productId);
         return productId;
     }
-
 
     public Product getProductDetailById(int productId) {
         return productRepository​​​​​​.findProductByProductId(productId);
