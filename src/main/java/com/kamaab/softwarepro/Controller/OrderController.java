@@ -5,28 +5,24 @@ import co.omise.ClientException;
 import co.omise.models.Charge;
 import co.omise.models.OmiseException;
 import com.kamaab.softwarepro.Model.Order;
-import com.kamaab.softwarepro.Model.Product;
 import com.kamaab.softwarepro.Service.OrderService;
-import com.kamaab.softwarepro.Service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.io.IOException;
-import java.util.LinkedHashMap;
 import java.util.List;
 
-@RestController
+@Controller
 public class OrderController {
 
     @Autowired
     private OrderService orderService;
-    @Autowired
-    private ProductService productService;
 
     @GetMapping("/orders")
     public ResponseEntity<List<Order>> getOrderList() {
@@ -38,6 +34,14 @@ public class OrderController {
         return new ResponseEntity<Order>(orderService.getOrderById(id).get(), HttpStatus.OK);
     }
 
+    @PostMapping("/")
+    public String saveAddress(ModelMap model,HttpServletRequest request){
+        String Address = request.getParameter("address");
+        Order order = new Order();
+        order.setAddress(Address);
+        orderService.save(order);
+        return "index";
+    }
 
     @PutMapping("/order")
     public ResponseEntity<Order> updateOrder(@Valid @RequestBody Order order) {

@@ -6,16 +6,25 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@EntityListeners(EntityListeners.class)
-public class Order  implements Serializable{
+@Table(name = "order_payment")
+public class Order implements Serializable{
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long orderId;
 
-    @NotBlank
     private long totalPrice;
 
     private String address;
+
+    public Order() {
+    }
+
+    public Order(long orderId, @NotBlank long totalPrice, String address) {
+        this.orderId = orderId;
+        this.totalPrice = totalPrice;
+        this.address = address;
+    }
 
     public long getOrderId() {
         return orderId;
@@ -38,7 +47,15 @@ public class Order  implements Serializable{
     }
 
     public void setAddress(String address) {
-        address = address;
+        this.address = address;
     }
 
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderId=" + orderId +
+                ", totalPrice=" + totalPrice +
+                ", address='" + address + '\'' +
+                '}';
+    }
 }
