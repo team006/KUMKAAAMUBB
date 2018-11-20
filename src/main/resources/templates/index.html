@@ -99,11 +99,15 @@
                     <div class="row">
                         <div class="col-12 col-md-6 col-lg-4" th:each="product : ${allProducts}">
                             <div class="card">
-                                <img class="card-img-top" th:src="${product.productImg}" alt="Card image cap" style="width:238px;height: 357px">
-
+                                <a class="name" th:href="${'/viewProductDetail/'+product.productId}" id="productId">
+                                <img class="card-img-top" th:src="${product.productImg}" alt="Card image cap"  style="width:238px;height: 357px">
+                                </a>
                                 <div class="card-body">
-                                    <h4 class="card-title"><a th:href="${'/productName/'+product.productId}" id="getproductId">
+                                    <h4 class="card-title">
+                                        <p id="productname" th:text="${product.productName}">productname</p>
                                     </h4>
+                                    <a class="name" th:href="${'/viewProductDetail/'+product.productId}" id="product-n
+                                         ame-link">
                                     <div class="row">
                                         <div class="col">
                                             <p class="btn btn-danger btn-block" th:text="${product.productPrice}"></p>
