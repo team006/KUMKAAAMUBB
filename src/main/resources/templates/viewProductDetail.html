@@ -2,7 +2,6 @@
 <html xmlns:th="https://www.thymeleaf.org">
 
 <html lang="en">
-<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -82,39 +81,30 @@
                 </article>
               </div>
       </div>
-              <div class="row text-center" th:each="${productDetail}">
+              <div class="row text-center">
                 
                   <div class="col-sm-6">
-                    
-                    <div class="thumbnail">
-                        <img th:src="${productDetail.productImg}" alt="productImg" width="500px" height="300px">
-                    </div><br>
+
+                      <div class="thumbnail">
+                          <img th:src="${productDetail.productImg}" alt="productPicture" width="500px" height="300px">
+                      </div><br>
                     <h1><span class="glyphicon glyphicon-heart" color="red"></span> 3,089</h1>
                     
                   </div>
                   <br>
                   <h1></h1>
                   <div class="col-sm-6">
-                    <h2><span th:text="${productDetail.productName}">productName</span></h2>
-                     <h2><span th:text="${productDetail.productPrice} + ' THB'">price</span></h2><br>
-                     
-                         
-                            <h4><p align="left"><font color="black"><b><u>รายละเอียดสินค้า</u></b></font></p></h4>
-                            <span th:text="${productDetail.productDetail}">Detail</span>
+                      <span th:text="${productDetail.productName}">productName</span>
+                      <h1><span th:text="${productDetail.productPrice} + ' THB'">price</span></h1>
 
-                          <h5><p align="left"><font color="black"><b>SHIPPING :</b> KERRY-50baht</font></p></h5>
-                            <h5><p align="left"><font color="black"><b>SIZE :</b></font></p></h5>
-                            <div class="btn-group btn-group-justified">
-                                <span th:text="${productDetail.productSize}">Size</span>
-                            </div><br>
-                            <h5><p align="left"><font color="black"><b>COLOR :</b></font></p></h5>
-                            <div class="btn-group btn-group-justified">
-                                <span th:text="${productDetail.productPrice}">Color</span>
-                            </div><br>
+                      <span th:text="${productDetail.productDescription}">price</span>
+                      <span th:text="${productDetail.productSize}">price</span>
+                      <span th:text="${productDetail.productType}">price</span>
+                      <span th:text="${productDetail.productAmount}">Amount</span>
+
                       <h5><p align="left">
-                          <b>AMOUNT :</b>
-                          <span th:text="${productDetail.productAmount}">Amount</span>
-                            </p></h5>
+
+                      </h5>
                               
                             <p align="right"> 
                               <button type="button" class="btn btn-primary" style="width:200px;height:50px">

@@ -30,7 +30,7 @@ class ProductController {
 
     @GetMapping("/viewProductDetail/{id}")
     public String getProductDetailById(@PathVariable("id") int id, Model model) {
-        Product productId = (Product) productService.getProductByProductId(id);
+        Product productId = productService.getProductDetailById(id);
         model.addAttribute("productDetail", productId);
         return "viewProductDetail";
     }
