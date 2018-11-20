@@ -96,10 +96,20 @@
                       <h5><p align="left"></h5>
                               <div class="button">
                                     <p align="center">
-                                      <button type="button" class="btn btn-primary" style="width:200px;height:50px">
-                                          <h4><font color="white"><b>ADD TO CART</b></font></h4></button>
-                                        <button type="button" class="btn btn-danger" style="width:200px;height:50px">
-                                            <h4><font color="white"><b>BUY</b></font></h4></button>
+                                            <form class="omise" name="checkoutForm" method="POST" th:action="@{/Address}">
+                                                <input type="hidden" name="description" th:value="${productDetail.productPrice}" />
+                                                <script type="text/javascript" src="https://cdn.omise.co/card.js"
+                                                        data-key="pkey_test_5dz2fa0y55w7hmhdavc"
+                                                        data-image="PATH_TO_LOGO_IMAGE"
+                                                        data-frame-label="Merchant site name"
+                                                        data-button-label="Pay now"
+                                                        data-submit-label="Submit"
+                                                        th:data-amount="${productDetail.productPrice}*100"
+                                                        data-currency="thb"
+                                                >
+                                                </script>
+                                                <!--the script will render <input type="hidden" name="omiseToken"> for you automatically-->
+                                            </form>
                                     </p>
                               </div>
                     </div>

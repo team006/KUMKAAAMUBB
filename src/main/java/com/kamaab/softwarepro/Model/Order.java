@@ -4,29 +4,18 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
+@EntityListeners(EntityListeners.class)
 public class Order  implements Serializable{
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long orderId;
 
     @NotBlank
     private long totalPrice;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "user_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private User userId;
-
-    @NotBlank
-    private String omiseToken;
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.MERGE)
-    @JoinColumn(name = "destination_location_id", nullable = false)
-    private Address destination;
+    private String address;
 
     public long getOrderId() {
         return orderId;
@@ -44,35 +33,12 @@ public class Order  implements Serializable{
         this.totalPrice = totalPrice;
     }
 
-    public User getUser() {
-        return userId;
+    public String getAddress() {
+        return address;
     }
 
-    public void setUser(User user) {
-        this.userId = user;
+    public void setAddress(String address) {
+        address = address;
     }
 
-    public Address getDestination() {
-        return destination;
-    }
-
-    public void setDestination(Address destination) {
-        this.destination = destination;
-    }
-
-    public User getUserId() {
-        return userId;
-    }
-
-    public void setUserId(User userId) {
-        this.userId = userId;
-    }
-
-    public String getOmiseToken() {
-        return omiseToken;
-    }
-
-    public void setOmiseToken(String omiseToken) {
-        this.omiseToken = omiseToken;
-    }
 }
