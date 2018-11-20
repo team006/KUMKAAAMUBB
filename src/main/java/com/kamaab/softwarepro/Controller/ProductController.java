@@ -28,16 +28,13 @@ class ProductController {
         return new ResponseEntity<>(productService.save(product), HttpStatus.CREATED);
     }
 
-    @PutMapping("/product")
-    public ResponseEntity<Product> updateProduct(@Valid @RequestBody Product product) {
-        return new ResponseEntity<>(productService.save(product), HttpStatus.OK);
+    @GetMapping("/viewProductDetail/{id}")
+    public String getProductDetailById(@PathVariable("id") int id, Model model) {
+        Product productId = (Product) productService.getProductByProductId(id);
+        model.addAttribute("productDetail", productId);
+        return "viewProductDetail";
     }
 
-    @GetMapping("/product/{productId}")
-    public ResponseEntity<Product> getProductByProductId(@PathVariable long productId){
-        return new ResponseEntity(productService.getProductByProductId(productId),HttpStatus.OK);
-
-    }
     @GetMapping("/")
     public String getAllProduct(ModelMap model){
         List<Product> allProducts = productService.getAllProduct();

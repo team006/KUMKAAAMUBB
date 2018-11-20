@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<!doctype html>
+<html xmlns:th="https://www.thymeleaf.org">
 
-<!DOCTYPE html>
+<html lang="en">
 <html>
     <head>
         <meta charset="utf-8">
@@ -85,12 +81,13 @@ and open the template in the editor.
                     </h1>
                 </article>
               </div>
+      </div>
               <div class="row text-center">
                 
                   <div class="col-sm-6">
                     
                     <div class="thumbnail">
-                      <img src="../img/sweater.jpg" alt="sweater" title="เสื้อกันหนาว SWEATER" width="500" height="300">
+                        <img th:src="${productDetail.productImg}" alt="productImg" width="500px" height="300px">
                     </div><br>
                     <h1><span class="glyphicon glyphicon-heart" color="red"></span> 3,089</h1>
                     
@@ -98,29 +95,26 @@ and open the template in the editor.
                   <br>
                   <h1></h1>
                   <div class="col-sm-6">
-                    <h2><p align="left"><font color="black"><b>"เสื้อกันหนาว SWEATER</b>
-                      พร้อมส่ง เสื้อกันหนาวสไตล์เกาหลี (ขนาดไซส์ GIRL)"</font></p></h2>
-                     <h2><p align="left"><font color="#000000"><b>฿199</b></font></p></h2><br> 
+                    <h2><span th:text="${productDetail.productName}">productName</span></h2>
+                     <h2><span th:text="${productDetail.productPrice} + ' THB'">price</span></h2><br>
                      
                          
                             <h4><p align="left"><font color="black"><b><u>รายละเอียดสินค้า</u></b></font></p></h4>
+                            <span th:text="${productDetail.productDetail}">Detail</span>
 
                           <h5><p align="left"><font color="black"><b>SHIPPING :</b> KERRY-50baht</font></p></h5>
                             <h5><p align="left"><font color="black"><b>SIZE :</b></font></p></h5>
                             <div class="btn-group btn-group-justified">
-                              <a href="#" class="btn btn-default">SIZE S</a>
-                              <a href="#" class="btn btn-default">SIZE M</a>
-                              <a href="#" class="btn btn-default">SIZE L</a>
-                              <a href="#" class="btn btn-default">SIZE XL</a>
+                                <span th:text="${productDetail.productSize}">Size</span>
                             </div><br>
                             <h5><p align="left"><font color="black"><b>COLOR :</b></font></p></h5>
                             <div class="btn-group btn-group-justified">
-                              <a href="#" class="btn btn-default">PINK</a>
-                              <a href="#" class="btn btn-default">WHITE</a>
-                              <a href="#" class="btn btn-default">BLACK</a>
-                              <a href="#" class="btn btn-default">YELLOW</a>
+                                <span th:text="${productDetail.productPrice}">Color</span>
                             </div><br>
-                            <h5><p align="left"><font color="black"><b>AMOUNT :</b> 500</font></p></h5>
+                      <h5><p align="left">
+                          <b>AMOUNT :</b>
+                          <span th:text="${productDetail.productAmount}">Amount</span>
+                            </p></h5>
                               
                             <p align="right"> 
                               <button type="button" class="btn btn-primary" style="width:200px;height:50px">
@@ -129,11 +123,8 @@ and open the template in the editor.
                                     <h4><font color="white"><b>BUY</b></font></h4></button>
                             </p>
                     </div>
-                  </div>
                 </div>
-                </div>
-                
-            </div>
+
     </body>
 
     <footer class="footer">
